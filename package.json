@@ -1,0 +1,21 @@
+{
+  "name": "React_Pomodoro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estivensal7/React_Pomodoro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/estivensal7/React_Pomodoro/issues"
+  },
+  "homepage": "https://github.com/estivensal7/React_Pomodoro#readme"
+}
