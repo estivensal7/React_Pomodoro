@@ -36,8 +36,17 @@ const getPomodoroDetails = (req, res) => {
 		.catch(err => res.status(500).json(err));
 };
 
+// update a pomodoro's details
+// PUT '/api/pomodoro/update-pomodoro/:id?'
+const updatePomodoro = (req, res) => {
+	Pomodoro.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+		.then(pomodoroModel => res.status(200).json(pomodoroModel))
+		.catch(err => res.status(500).json(err));
+};
+
 // export our methods
 module.exports = {
 	getPomodoroDetails,
-	newPomodoro
+	newPomodoro,
+	updatePomodoro
 };
