@@ -5,7 +5,7 @@ const {
 	getPomodoroDetails
 } = require("../../controllers/pomodoro-controller");
 
-router.route("/:_id?").get(getPomodoroDetails);
+router.route("/:id?").get(getPomodoroDetails);
 
 router.route("/create-pomodoro").post(newPomodoro);
 

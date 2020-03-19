@@ -1,6 +1,6 @@
 // import dependencies
 const jwt = require("jsonwebtoken");
-const { User } = require("../models");
+const { User, Pomodoro } = require("../models");
 const handle = require("../utils/promise-handler");
 
 // set up secret for JWT (json web token)...typically you'd hide this in a .env
@@ -97,9 +97,18 @@ const getUserProfile = async (req, res) => {
 	}
 };
 
+// get user's pomodoros
+// GET '/api/user/pomodoros/:id?' (this will be run through auth middleware)
+const getAllPomodoros = (req, res) => {
+	Pomodoro.find({ user_id: req.params.id })
+		.then(pomodoroModel => res.status(200).json(pomodoroModel))
+		.catch(err => res.status(500).json(err));
+};
+
 // export our methods
 module.exports = {
 	getUserProfile,
 	login,
-	register
+	register,
+	getAllPomodoros
 };

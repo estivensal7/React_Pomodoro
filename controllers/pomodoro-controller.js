@@ -1,6 +1,5 @@
 // import dependencies
 const { Pomodoro } = require("../models");
-const handle = require("../utils/promise-handler");
 
 // create function to create a new pomodoro
 // used when the POST route '/api/pomodoro/create-pomodoro' is hit
@@ -30,17 +29,11 @@ const newPomodoro = (req, res) => {
 };
 
 // get pomodoro details
-// GET '/api/pomodoro/:_id?'
-const getPomodoroDetails = async (req, res) => {
-	const [pomodoroErr, pomodoroDetails] = await handle(
-		Pomodoro.findById(req._id)
-	);
-
-	if (pomodoroErr) {
-		res.status(500).json(pomodoroErr);
-	} else {
-		res.status(200).json(pomodoroDetails);
-	}
+// GET '/api/pomodoro/:id?'
+const getPomodoroDetails = (req, res) => {
+	Pomodoro.find({ _id: req.params.id })
+		.then(pomodoroModel => res.status(200).json(pomodoroModel))
+		.catch(err => res.status(500).json(err));
 };
 
 // export our methods
