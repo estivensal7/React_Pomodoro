@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 //setting up dotenv
 require("dotenv").config();
@@ -11,6 +12,7 @@ const PORT = process.env.PORT || 3001;
 // setting up middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 console.log(process.env.MONGO_USER);
 console.log(process.env.MONGO_PASSWORD);
@@ -23,10 +25,10 @@ mongoose.Promise = Promise;
 mongoose
 	.connect(mongoUri, {
 		useNewUrlParser: true,
-		useUnifiedTopology: true
+		useUnifiedTopology: true,
 	})
 	.then(() => console.log("MongoDB Connected..."))
-	.catch(err => console.log(err));
+	.catch((err) => console.log(err));
 
 //setting up routes
 const routes = require("./routes");

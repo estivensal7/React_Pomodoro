@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Col, Button, Form, FormGroup, Label, Input } from "reactstrap";
 
-import API from "../../Utils";
+import API from "../../Utils/api-routes";
 
 function SignIn() {
 	const [email, setEmail] = useState("");

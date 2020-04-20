@@ -9,9 +9,8 @@ import {
 	FormText,
 	FormFeedback,
 } from "reactstrap";
-import { AvForm, AvField } from "availity-reactstrap-validation";
 
-import API from "../../Utils";
+import API from "../../Utils/api-routes";
 
 function SignUp() {
 	const [email, setEmail] = useState("");

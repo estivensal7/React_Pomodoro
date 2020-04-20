@@ -1,0 +1,17 @@
+[
+	{
+		"text": "Dashboard",
+		"path": "/dashboard",
+		"icon": "home"
+	},
+	{
+		"text": "History",
+		"path": "/history",
+		"icon": "analytics"
+	},
+	{
+		"text": "Account",
+		"path": "/account",
+		"icon": "person"
+	}
+]
