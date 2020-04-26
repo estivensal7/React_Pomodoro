@@ -1,9 +1,11 @@
+// SIDEBAR
 nav.responsive-nav {
+	z-index: 1000;
 	background: "#333";
 	height: 60px;
 	width: 100%;
 	position: fixed;
-	box-shadow: 2px 2px 2px #ccc;
+	box-shadow: 2px 2px 2px #111;
 
 	ul {
 		background: "#333";
@@ -13,7 +15,7 @@ nav.responsive-nav {
 		padding-inline-start: 0;
 		height: 100%;
 		align-items: center;
-		box-shadow: 2px 2px 2px #ccc;
+		box-shadow: 2px 2px 2px #111;
 
 		figure {
 			margin-block-start: 0;
@@ -43,12 +45,12 @@ nav.responsive-nav {
 	}
 }
 
-@media screen and (max-width: 759px) {
+@media screen and (max-width: 1700px) {
 	nav.responsive-nav {
 		ul {
 			height: 100%;
-			width: 300px;
-			left: -240px;
+			width: 180px;
+			left: -120px;
 			position: fixed;
 			top: 60px;
 			flex-direction: column;

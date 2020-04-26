@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import Logo from "../../assets/images/logo.png";
 
 function Sidebar({ background, hoverBackground, linkColor, navLinks, logo }) {
 	const [hoverIndex, setHoverIndex] = useState(-1);
